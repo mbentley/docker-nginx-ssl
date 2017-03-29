@@ -1,0 +1,15 @@
+server {
+        listen 80 default_server;
+        root /var/www;
+
+        index index.html index.htm default.htm default.html;
+}
+
+server {
+        listen 443 ssl default_server;
+        root /var/www;
+        ssl_certificate_key /run/secrets/key.pem;
+        ssl_certificate /run/secrets/cert.pem;
+
+        index index.html index.htm default.htm default.html;
+}
